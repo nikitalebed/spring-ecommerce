@@ -34,9 +34,7 @@ public class ProductController implements CoreController {
     @PostMapping(value = "/{id}")
     public Product edit(@PathVariable("id") Long id, @RequestBody @Valid Product product) {
         Product updatedProduct = ecommerceService.getProduct(id);
-
         if (checkProductNotNull(updatedProduct)) return null;
-
         updatedProduct.setName(product.getName());
         updatedProduct.setPrice(product.getPrice());
         updatedProduct.setDescription(product.getDescription());
