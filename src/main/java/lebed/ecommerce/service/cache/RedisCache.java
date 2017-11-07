@@ -11,35 +11,13 @@ import java.util.List;
 @Data
 public class RedisCache implements Cache {
 
+    private static final String CAN_T_FIND_OBJECT_IN_REDIS_LIST = "Can't find object in Redis list.";
     private ObjectMapper objectMapper;
     private Jedis jedis;
 
     public RedisCache(ObjectMapper objectMapper, Jedis jedis) {
         this.objectMapper = objectMapper;
         this.jedis = jedis;
-    }
-
-    @Override
-    public Object getItem(String key, Class type) {
-        String jsonObject = jedis.get(key);
-        try {
-            return objectMapper.readValue(jsonObject, type);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    @Override
-    public Object setItem(String key, Object item) {
-        try {
-            String jsonItem = objectMapper.writeValueAsString(item);
-            String out = jedis.set(key, jsonItem);
-            return objectMapper.readValue(out, Object.class);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
     }
 
     @Override
@@ -75,7 +53,7 @@ public class RedisCache implements Cache {
                     System.out.println(e.getMessage());
                 }
             } else {
-                System.out.println("Can't find object in Redis list.");
+                System.out.println(CAN_T_FIND_OBJECT_IN_REDIS_LIST);
             }
         });
 
@@ -86,7 +64,7 @@ public class RedisCache implements Cache {
         List<CartItem> list = new ArrayList<>();
         jedis.smembers(key).forEach(jsonItem -> {
             try {
-                list.add((CartItem) objectMapper.readValue(jsonItem, CartItem.class));
+                list.add(objectMapper.readValue(jsonItem, CartItem.class));
             } catch (Exception e) {
                 e.getMessage();
             }

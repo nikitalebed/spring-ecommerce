@@ -6,10 +6,6 @@ import java.util.List;
 
 public interface Cache {
 
-    Object getItem(String key, Class type);
-
-    Object setItem(String key, Object item);
-
     void removeItem(String key);
 
     List<CartItem> getList(String key);
