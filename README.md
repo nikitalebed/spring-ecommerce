@@ -29,4 +29,4 @@ API:
   POST /{id} - Add CartItem to cart with ID {id}
   DELETE /{id}/{product_id} - Remove product with ID {product_id} from cart with ID {id}
   POST /{id}/quantity - Updates cart item, i.e. set product quantity
-  POTS /{id}/order - Create order from cart
+  POST /{id}/order - Create order from cart
