@@ -10,10 +10,10 @@ import java.util.List;
 public class GroupResource extends ResourceSupport {
 
     @JsonProperty
-    public long id;
-    public String groupName;
-    public String price;
-    public List<GroupVariant> variants;
+    private Long id;
+    private String groupName;
+    private String price;
+    private List<GroupVariant> variants;
 
     public GroupResource(ProductGroup group) {
         this.id = group.getId();

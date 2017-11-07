@@ -25,6 +25,7 @@ public class ProductController implements CoreController {
 
     private static final String PRODUCT_IMAGES_FOLDER = "product-images/";
     private static final String IMAGE_PNG_MIME_TYPE = "image/png";
+
     @Autowired
     private ECommerceService ecommerceService;
 
