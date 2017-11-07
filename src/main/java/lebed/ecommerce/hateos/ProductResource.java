@@ -7,18 +7,18 @@ import org.springframework.hateoas.ResourceSupport;
 public class ProductResource extends ResourceSupport {
 
     @JsonProperty
-    public Long id;
-    public String name;
-    public String price;
-    public String description;
-    public Object group;
+    private Long id;
+    private String name;
+    private String price;
+    private String description;
+    private Object group;
 
-    public ProductResource(Product model) {
-        id = model.getId();
-        name = model.getName();
-        price = model.getPrice();
-        description = model.getDescription();
-        group = model.getGroup();
+    public ProductResource(Product product) {
+        id = product.getId();
+        name = product.getName();
+        price = product.getPrice();
+        description = product.getDescription();
+        group = product.getGroup();
     }
 
 }

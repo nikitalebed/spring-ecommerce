@@ -22,7 +22,7 @@ public class FileSystemStorageService implements StorageService {
     private static final String UPLOADS_PATH = "uploads";
     private static final String COULD_NOT_READ_FILE = "Could not read file: ";
     private static final String COULD_NOT_INITIALIZE_STORAGE = "Could not initialize storage";
-    private static final int BOUND = 100000;
+    private static final Integer BOUND = 100000;
 
     private Path rootLocation;
 
@@ -55,7 +55,6 @@ public class FileSystemStorageService implements StorageService {
                     + "-" + (BOUND + new Random().nextInt(BOUND))
                     + "-" + filename;
             Files.copy(file.getInputStream(), location.resolve(filename));
-
             return filename;
         } catch (IOException e) {
             throw new StorageException("Failed to store file " + file.getOriginalFilename(), e);
