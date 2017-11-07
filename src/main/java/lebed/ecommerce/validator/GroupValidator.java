@@ -1,6 +1,6 @@
 package lebed.ecommerce.validator;
 
-import lebed.ecommerce.model.ProductGroup;
+import lebed.ecommerce.model.product.ProductGroup;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

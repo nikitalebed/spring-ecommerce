@@ -2,8 +2,8 @@ package lebed.ecommerce.hateos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lebed.ecommerce.model.Order;
-import lebed.ecommerce.model.OrderItem;
+import lebed.ecommerce.model.order.Order;
+import lebed.ecommerce.model.order.OrderItem;
 import org.springframework.hateoas.ResourceSupport;
 
 import java.util.List;

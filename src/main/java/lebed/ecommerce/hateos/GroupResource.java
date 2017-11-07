@@ -2,7 +2,7 @@ package lebed.ecommerce.hateos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lebed.ecommerce.model.GroupVariant;
-import lebed.ecommerce.model.ProductGroup;
+import lebed.ecommerce.model.product.ProductGroup;
 import org.springframework.hateoas.ResourceSupport;
 
 import java.util.List;

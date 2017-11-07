@@ -1,7 +1,7 @@
 package lebed.ecommerce.hateos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lebed.ecommerce.model.Product;
+import lebed.ecommerce.model.product.Product;
 import org.springframework.hateoas.ResourceSupport;
 
 public class ProductResource extends ResourceSupport {

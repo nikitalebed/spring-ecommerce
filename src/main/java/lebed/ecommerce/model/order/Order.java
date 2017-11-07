@@ -1,4 +1,4 @@
-package lebed.ecommerce.model;
+package lebed.ecommerce.model.order;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
