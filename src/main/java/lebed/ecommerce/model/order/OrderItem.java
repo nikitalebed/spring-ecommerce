@@ -1,6 +1,8 @@
-package lebed.ecommerce.model;
+package lebed.ecommerce.model.order;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lebed.ecommerce.model.GroupVariant;
+import lebed.ecommerce.model.product.Product;
 import lombok.Data;
 
 import javax.persistence.*;

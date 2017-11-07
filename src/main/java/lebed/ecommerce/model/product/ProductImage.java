@@ -1,4 +1,4 @@
-package lebed.ecommerce.model;
+package lebed.ecommerce.model.product;
 
 import lombok.Data;
 

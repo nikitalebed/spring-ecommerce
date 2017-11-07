@@ -1,7 +1,7 @@
 package lebed.ecommerce.controller;
 
 import lebed.ecommerce.hateos.OrderResource;
-import lebed.ecommerce.model.Order;
+import lebed.ecommerce.model.order.Order;
 import lebed.ecommerce.service.ECommerceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,9 @@
 package lebed.ecommerce.service;
 
-import lebed.ecommerce.model.Order;
-import lebed.ecommerce.model.Product;
-import lebed.ecommerce.model.ProductGroup;
-import lebed.ecommerce.model.ProductImage;
+import lebed.ecommerce.model.order.Order;
+import lebed.ecommerce.model.product.Product;
+import lebed.ecommerce.model.product.ProductGroup;
+import lebed.ecommerce.model.product.ProductImage;
 import lebed.ecommerce.repository.GroupRepository;
 import lebed.ecommerce.repository.OrderRepository;
 import lebed.ecommerce.repository.ProductImageRepository;

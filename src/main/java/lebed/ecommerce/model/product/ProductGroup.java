@@ -1,7 +1,8 @@
-package lebed.ecommerce.model;
+package lebed.ecommerce.model.product;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lebed.ecommerce.model.GroupVariant;
 import lombok.Data;
 
 import javax.persistence.*;

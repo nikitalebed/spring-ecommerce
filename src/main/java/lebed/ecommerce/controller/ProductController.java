@@ -1,8 +1,8 @@
 package lebed.ecommerce.controller;
 
 import lebed.ecommerce.hateos.ProductResource;
-import lebed.ecommerce.model.Product;
-import lebed.ecommerce.model.ProductImage;
+import lebed.ecommerce.model.product.Product;
+import lebed.ecommerce.model.product.ProductImage;
 import lebed.ecommerce.service.ECommerceService;
 import lebed.ecommerce.service.files.StorageService;
 import lombok.NonNull;
