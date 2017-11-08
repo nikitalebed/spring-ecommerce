@@ -14,4 +14,7 @@ public interface Cache {
 
     List<CartItem> removeItemFromList(String key, Object item);
 
+    Object getItem(String key, Class type);
+
+    Object setItem(String key, Object item);
 }

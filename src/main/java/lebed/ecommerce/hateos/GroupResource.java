@@ -11,8 +11,14 @@ public class GroupResource extends ResourceSupport {
 
     @JsonProperty
     private Long id;
+
+    @JsonProperty
     private String groupName;
+
+    @JsonProperty
     private String price;
+
+    @JsonProperty
     private List<GroupVariant> variants;
 
     public GroupResource(ProductGroup group) {

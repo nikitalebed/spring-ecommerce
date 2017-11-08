@@ -12,15 +12,35 @@ public class OrderResource extends ResourceSupport {
 
     @JsonProperty
     private Long id;
+
+    @JsonProperty
     private String name;
+
+    @JsonProperty
     private String address;
+
+    @JsonProperty
     private String city;
+
+    @JsonProperty
     private String zip;
+
+    @JsonProperty
     private String status;
+
+    @JsonProperty
     private String comment;
+
+    @JsonProperty
     private String totalPrice;
+
+    @JsonProperty
     private String type;
+
+    @JsonProperty
     private String created;
+
+    @JsonProperty
     private List<OrderItem> items;
 
     public OrderResource(Order order) {
