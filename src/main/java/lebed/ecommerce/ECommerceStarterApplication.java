@@ -15,15 +15,6 @@ import redis.clients.jedis.Jedis;
 @SpringBootApplication
 public class ECommerceStarterApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(ECommerceStarterApplication.class, args);
-    }
-
-    @Bean
-    CommandLineRunner init(StorageService storageService) {
-        return (args) -> storageService.init();
-    }
-
     @Value("${redis.host}")
     private String redisHost;
 
@@ -33,15 +24,20 @@ public class ECommerceStarterApplication {
     @Value("${redis.password}")
     private String redisPassword;
 
-    private Jedis redisCliFactory() {
-        Jedis jedis = new Jedis(redisHost, redisPort);
-        jedis.auth(redisPassword);
-        return jedis;
+    public static void main(String[] args) {
+        SpringApplication.run(ECommerceStarterApplication.class, args);
+    }
+
+    @Bean
+    CommandLineRunner init(StorageService storageService) {
+        return (args) -> storageService.init();
     }
 
     @Bean
     @Autowired
     public Cache cacheObject(ObjectMapper objectMapper) {
-        return new RedisCache(objectMapper, redisCliFactory());
+        Jedis jedis = new Jedis(redisHost, redisPort);
+        jedis.auth(redisPassword);
+        return new RedisCache(objectMapper, jedis);
     }
 }
