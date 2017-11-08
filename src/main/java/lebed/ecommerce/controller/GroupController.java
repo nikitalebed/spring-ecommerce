@@ -26,6 +26,13 @@ public class GroupController implements CoreController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public GroupResource view(@PathVariable("id") long id){
+        GroupResource groupResource = new GroupResource(eCommerceService.getGroup(id));
+        groupResource.add(createHateoasLink(id));
+        return groupResource;
+    }
+
     @PostMapping(value = "/{id}")
     public ProductGroup edit(@PathVariable(value = "id", required = false) long id, @RequestBody @Valid ProductGroup group) {
         ProductGroup updatedGroup = eCommerceService.getGroup(id);
