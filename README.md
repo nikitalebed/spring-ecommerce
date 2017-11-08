@@ -30,3 +30,14 @@ API:
   DELETE /{id}/{product_id} - Remove product with ID {product_id} from cart with ID {id}
   POST /{id}/quantity - Updates cart item, i.e. set product quantity
   POST /{id}/order - Create order from cart
+  ```
+  
+  To run application just use: 
+  ```
+  mvn spring-boot:run
+  ```
+  
+   Spring Swagger: 
+   ```
+   http://localhost:8080/swagger-ui.html
+   ```
