@@ -8,9 +8,16 @@ public class ProductResource extends ResourceSupport {
 
     @JsonProperty
     private Long id;
+
+    @JsonProperty
     private String name;
+
+    @JsonProperty
     private String price;
+
+    @JsonProperty
     private String description;
+
     private Object group;
 
     public ProductResource(Product product) {

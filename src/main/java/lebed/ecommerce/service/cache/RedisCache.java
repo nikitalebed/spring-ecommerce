@@ -71,4 +71,27 @@ public class RedisCache implements Cache {
         });
         return list;
     }
+
+    @Override
+    public Object getItem(String key, Class type) {
+        String jsonObject = jedis.get(key);
+        try {
+            return objectMapper.readValue(jsonObject, type);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public Object setItem(String key, Object item) {
+        try {
+            String jsonItem = objectMapper.writeValueAsString(item);
+            String out = jedis.set(key, jsonItem);
+            return objectMapper.readValue(out, Object.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
