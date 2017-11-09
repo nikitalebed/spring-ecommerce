@@ -36,17 +36,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/swagger-ui.html").permitAll()
                 .antMatchers("/webjars/**").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/index.html").permitAll()
                 .anyRequest().authenticated()
                 .anyRequest().hasAuthority("admin")
                 .and().formLogin().successHandler(authenticationSuccessHandler)
                 .failureHandler(authenticationFailureHandler)
                 .and().csrf().disable();
     }
-
-    @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+        // TODO uncomment it after finishing ui part
+//    @Bean
+//    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
 
     @Bean
     public TokenAuthenticationFilter jwtAuthenticationTokenFilter() throws Exception {
