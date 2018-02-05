@@ -1,13 +1,39 @@
-<!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/main">
 <head>
-    <title>ECommerce</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <title>Home</title>
 </head>
 <body>
-<div id="root"></div>
-<script src="built/bundle.js"></script>
+<div layout:fragment="content">
+    <section class="billboard">
+        <div class="container">
+            <h2>Head</h2>
+        </div>
+    </section>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>This is container</h1>
+            <p>This is a paragraph</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-header">
+            <h2>Section 1</h2>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Green section</h3>
+            </div>
+            <div class="panel-body" ></div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Blue section</h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

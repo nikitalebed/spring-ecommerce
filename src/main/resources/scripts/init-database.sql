@@ -1,5 +1,3 @@
--- Adminer 4.3.1 MySQL dump
-
 SET NAMES utf8;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
@@ -99,8 +97,17 @@ CREATE TABLE `users` (
   UNIQUE KEY `UK_6dotkott2kjsp8vw4d0m25fb7` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--CREATE TABLE USER (
+--  id         BIGINT auto_increment,
+--  email      VARCHAR(100),
+--  name       VARCHAR(100) NOT NULL,
+--  github     VARCHAR(30),
+--  twitter    VARCHAR(30),
+--  avatar_url VARCHAR(200),
+--  bio        TEXT,
+--  PRIMARY KEY (id)
+--);
+
 INSERT INTO `users` (`id`, `access_token`, `created`, `email`, `name`, `password`) VALUES
 (1,	NULL,	NULL,	'b',	'Boris Trivic',	'$2a$04$WdK723i7N7Gql8VeziMjvOudXQzSg43ahCIVK83aB1sZ91X0zkFqq'),
 (2,	NULL,	NULL,	'user',	'Test User',	'$2a$04$6awb3tKYlsw6uyay5.Rv1.nAiw/Tp3N5GjVtckRhqaUI64.Gp43gO');
-
--- 2017-05-02 14:08:31

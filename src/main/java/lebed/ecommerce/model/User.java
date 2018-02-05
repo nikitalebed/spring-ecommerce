@@ -18,10 +18,17 @@ public class User {
     @Column(unique = true)
     private String email;
 
+    private String twitter;
+
+    private String github;
+
     private String password;
 
-    @Column(name = "access_token")
-    private String accessToken;
+    private String avatarUrl;
+
+    @Column
+    @Lob
+    private String bio;
 
     private String created;
 
