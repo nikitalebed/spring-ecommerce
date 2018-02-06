@@ -1,5 +1,5 @@
 package lebed.ecommerce.config.web;
 
 public enum Section {
-	HOME, ADMIN
+	HOME, PRODUCT, NEWS, ADMIN
 }

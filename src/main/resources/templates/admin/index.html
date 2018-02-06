@@ -11,12 +11,14 @@
         <table class="table table-striped table-hover ">
             <thead>
             <tr>
-                <th>#</th>
+                <th>id</th>
+                <th>user</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">user id</td>
+                <td th:text="${user.name}">name</td>
             </tr>
             </tbody>
         </table>
