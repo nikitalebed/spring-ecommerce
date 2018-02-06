@@ -21,7 +21,8 @@ import org.springframework.security.core.authority.AuthorityUtils;
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private static final Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SecurityConfig.class);
+    private static final String LOGIN = "login";
 
     private final GitIntegrationProperties gitIntegrationProperties;
 
@@ -32,8 +33,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/", "/news", "/login**", "/css/**", "/img/**", "/webjars/**", "/bootstrap/**").permitAll()
+                .antMatchers("/admin/**", "/swagger-ui.html").hasRole("ADMIN")
+                .antMatchers(
+                        "/",
+                        "/order/**", "/cart/**", "/group/**", "/product/**",
+                        "/login**", "/css/**", "/img/**", "/webjars/**", "/bootstrap/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf()
@@ -50,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthoritiesExtractor authoritiesExtractor() {
         return map -> {
-            String username = (String) map.get("login");
+            String username = (String) map.get(LOGIN);
             if (this.gitIntegrationProperties.getSecurity().getAdmins().contains(username)) {
                 return AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER,ROLE_ADMIN");
             } else {
@@ -62,10 +66,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PrincipalExtractor principalExtractor(GithubClient githubClient, UserRepository userRepository) {
         return map -> {
-            String githubLogin = (String) map.get("login");
+            String githubLogin = (String) map.get(LOGIN);
             User user = userRepository.findByGithub(githubLogin);
             if (user == null) {
-                logger.info("Initialize user with githubId {}", githubLogin);
+                LOGGER.info("Initialize user with githubId {}", githubLogin);
                 GithubUser gitUser = githubClient.getUser(githubLogin);
                 user = new User();
                 user.setEmail(gitUser.getEmail());
