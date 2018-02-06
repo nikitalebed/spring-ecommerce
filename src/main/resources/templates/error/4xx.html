@@ -1,4 +1,4 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/main">
 <head>
     <meta charset="UTF-8"/>
     <title th:text="'Ooops, ' + ${error}">Ooops, page not found</title>
@@ -14,10 +14,13 @@
     </style>
 </head>
 <body>
+<div layout:fragment="content">
 <div class="wrapper">
+    <h1>Ooops, page not found</h1>
     <div class="big">
         <h1>¯\_(ツ)_/¯</h1>
     </div>
+</div>
 </div>
 </body>
 </html>
