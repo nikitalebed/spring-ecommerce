@@ -1,4 +1,4 @@
-package lebed.ecommerce.controller.admin;
+package lebed.ecommerce.controller.section;
 
 import lebed.ecommerce.config.web.Navigation;
 import lebed.ecommerce.config.web.Section;

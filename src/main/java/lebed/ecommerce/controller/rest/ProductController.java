@@ -1,4 +1,4 @@
-package lebed.ecommerce.controller;
+package lebed.ecommerce.controller.rest;
 
 import lebed.ecommerce.hateos.ProductResource;
 import lebed.ecommerce.model.product.Product;

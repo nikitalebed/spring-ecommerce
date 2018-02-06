@@ -1,4 +1,4 @@
-package lebed.ecommerce.controller;
+package lebed.ecommerce.controller.rest;
 
 import org.springframework.hateoas.Link;
 
