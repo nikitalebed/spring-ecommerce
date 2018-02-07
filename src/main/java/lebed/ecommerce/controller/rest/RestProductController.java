@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/product")
-public class ProductController implements CoreController {
+@RequestMapping("/api/product")
+public class RestProductController implements CoreController {
 
     private static final String PRODUCT_IMAGES_FOLDER = "product-images/";
     private static final String IMAGE_PNG_MIME_TYPE = "image/png";
