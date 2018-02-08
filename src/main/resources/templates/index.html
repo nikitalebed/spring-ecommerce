@@ -16,23 +16,16 @@
         </div>
     </div>
     <div class="container">
-        <div class="page-header">
-            <h2>Latest</h2>
+        <div th:if="${not #lists.isEmpty(latestNews)}" class="page-header">
+            <h2>Latest News:</h2>
         </div>
-        <div class="panel panel-success">
+
+        <div th:each="latestNews : ${latestNews}" class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title">Spring Framework is awesome!</h3>
+                <h3 th:text="${latestNews.user}" class="panel-title">user - date</h3>
             </div>
             <div class="panel-body">
-
-            </div>
-        </div>
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title">Spring Boot is much more awesome then Spring Framework!</h3>
-            </div>
-            <div class="panel-body">
-
+                <p th:text="${latestNews.message}">message</p>
             </div>
         </div>
     </div>
