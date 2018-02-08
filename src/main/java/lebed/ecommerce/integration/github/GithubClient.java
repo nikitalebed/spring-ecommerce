@@ -1,6 +1,5 @@
 package lebed.ecommerce.integration.github;
 
-import lebed.ecommerce.GitIntegrationProperties;
 import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.annotation.Cacheable;

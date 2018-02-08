@@ -1,11 +1,11 @@
-package lebed.ecommerce;
+package lebed.ecommerce.integration.github;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Arrays;
 import java.util.List;
 
-@ConfigurationProperties("cfp")
+@ConfigurationProperties("eCommerce")
 public class GitIntegrationProperties {
 
 	private final Github github = new Github();

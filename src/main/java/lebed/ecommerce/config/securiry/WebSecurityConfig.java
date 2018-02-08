@@ -1,6 +1,6 @@
 package lebed.ecommerce.config.securiry;
 
-import lebed.ecommerce.GitIntegrationProperties;
+import lebed.ecommerce.integration.github.GitIntegrationProperties;
 import lebed.ecommerce.integration.github.GithubClient;
 import lebed.ecommerce.integration.github.GithubUser;
 import lebed.ecommerce.model.User;
