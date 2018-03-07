@@ -29,6 +29,7 @@
                 <li th:class="${navSection == 'home' ? 'active' : ''}"><a th:text="#{home.navbar.message}" th:href="@{/}"></a></li>
                 <li th:class="${navSection == 'product' ? 'active' : ''}"><a th:text="#{catalog.navbar.message}" th:href="@{/product}"></a></li>
                 <li th:class="${navSection == 'news' ? 'active' : ''}"><a th:text="#{news.navbar.message}" th:href="@{/news}"></a></li>
+                <li th:class="${navSection == 'contactUs' ? 'active' : ''}"><a th:text="#{contactUs.navbar.message}" th:href="@{/contactUs}"></a></li>
             </ul>
 
             <a th:text="#{login.navbar.message}" class="btn btn-default navbar-btn navbar-right" sec:authorize="!hasRole('ROLE_USER')" th:href="@{/login}" role="button"></a>

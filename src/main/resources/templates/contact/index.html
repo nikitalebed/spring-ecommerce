@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/main">
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6 col-md-offset-3">
+
+                <div class="well">
+
+                    <div class="text-center">
+
+                        <h1 th:text="#{contact.h1.text}"></h1>
+                        <p class="lead" th:text="#{contact.p.lead}"></p>
+
+                        <form id="contactForm"
+                              th:action="@{/contact/}"
+                              th:object="${feedback}"
+                              method="post"
+                              class="text-left">
+
+                            <div class="form-group">
+                                <label for="email" th:text="#{form.email}"></label>
+                                <input type="email" id="email" th:field="*{email}" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstName" th:text="#{form.firstname}"></label>
+                                <input type="text" id="firstName" th:field="*{firstName}" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName" th:text="#{form.lastname}"></label>
+                                <input type="text" id="lastName" th:field="*{lastName}" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="feedback" th:text="#{contact.feedback.form.text}"></label>
+                                <textarea  id="feedback" th:field="*{feedback}" class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" th:text="#{form.submit}"></button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
