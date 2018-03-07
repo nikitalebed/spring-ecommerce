@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8"/>
@@ -26,28 +26,28 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li th:class="${navSection == 'home' ? 'active' : ''}"><a th:href="@{/}">Home</a></li>
-                <li th:class="${navSection == 'product' ? 'active' : ''}"><a th:href="@{/product}">Product Catalog</a></li>
-                <li th:class="${navSection == 'news' ? 'active' : ''}"><a th:href="@{/news}">News</a></li>
+                <li th:class="${navSection == 'home' ? 'active' : ''}"><a th:text="#{home.navbar.message}" th:href="@{/}"></a></li>
+                <li th:class="${navSection == 'product' ? 'active' : ''}"><a th:text="#{catalog.navbar.message}" th:href="@{/product}"></a></li>
+                <li th:class="${navSection == 'news' ? 'active' : ''}"><a th:text="#{news.navbar.message}" th:href="@{/news}"></a></li>
             </ul>
 
-            <a class="btn btn-default navbar-btn navbar-right" sec:authorize="!hasRole('ROLE_USER')" th:href="@{/login}" role="button">Login</a>
+            <a th:text="#{login.navbar.message}" class="btn btn-default navbar-btn navbar-right" sec:authorize="!hasRole('ROLE_USER')" th:href="@{/login}" role="button"></a>
             <ul class="nav navbar-nav navbar-right" sec:authorize="hasRole('ROLE_USER')">
                 <li class="dropdown">
                     <a id="user-menu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img th:src="${#authentication.principal.avatarUrl}" height="20" width="20"/> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-header" th:text="${#authentication.principal.github}">the_username</li>
-                        <li><a id="profile" href="https://github.com/settings/profile">GitHub Profile</a></li>
+                        <li><a th:text="#{github.profile}" id="profile" href="https://github.com/settings/profile"></a></li>
                         <li>
                             <form th:action="@{/logout}" method="post" role="logout">
-                                <button type="submit" class="btn btn-link">Sign Out</button>
+                                <button th:text="#{logout.navbar.message}" type="submit" class="btn btn-link"></button>
                             </form>
                         </li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li sec:authorize="hasRole('ROLE_ADMIN')" th:class="${navSection == 'admin' ? 'active' : ''}"><a th:href="@{/admin}">Admin</a></li>
+                <li sec:authorize="hasRole('ROLE_ADMIN')" th:class="${navSection == 'admin' ? 'active' : ''}"><a th:text="#{admin.navbar.message}" th:href="@{/admin}"></a></li>
             </ul>
         </div>
     </div>

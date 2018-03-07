@@ -25,7 +25,7 @@ public class RedisConfig {
     @Autowired
     public Cache cacheObject(ObjectMapper objectMapper) {
         Jedis jedis = new Jedis(redisHost, redisPort);
-        jedis.auth(redisPassword);
+//        jedis.auth(redisPassword);
         return new RedisCache(objectMapper, jedis);
     }
 
