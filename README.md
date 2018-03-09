@@ -1,5 +1,28 @@
 # Java Spring E-commerce project
 
+Trying to do a simple e-commerce java application. For now the application has the following fetures:
+```
+  Light UI with thymeleaf and JQuery + Bootstrap
+  Working with relational database
+  L18n
+  Rest api for all e-commerce stuff (checkout  is not emplemented yet)
+  Ability to Log in with git hub account. (Git hub integration)
+  Caching using redis database
+  Sending email with feedback  
+```
+
+```
+used stack:
+  Spring (Boot, Data, Security)
+  Swagger
+  Redis cache
+  oauth2
+  MySQL
+  hateoas
+  thymeleaf
+  JQuery, Bootstrap
+  ```
+
 API:
 ```
 /product
@@ -31,6 +54,8 @@ API:
   POST /{id}/quantity - Updates cart item, i.e. set product quantity
   POST /{id}/order - Create order from cart
   ```
+  
+  First of all you have to go to ``` appliction.prperties ``` and change all personal properties to yours
   
   To run application just use: 
   ```
